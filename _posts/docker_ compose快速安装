@@ -1,0 +1,15 @@
+我们经常看到有的这么说
+curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o  /usr/local/bin/docker-compose
+
+其实这个也就是下载一个文件到指定的位置
+chmod +x /usr/local/bin/docker-compose
+最后给他一个可执行的权限
+
+但是这个下载比较慢
+所以我们可以这样 ，先把地址拿来
+echo "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)"
+
+我的就是https://github.com/docker/compose/releases/download/1.23.2/docker-compose-Linux-x86_64
+这个地址，直接下载很慢，可以用迅雷下载好了，再传到我们的服务器上，都比直接下载快的多，大家可以试试
+然后 mv xxx /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
